@@ -45,16 +45,17 @@ subtract(1, 2)
 
 let substract = (param1, param2) => {
   return param1 - param2
-//   console.log(param1 - param2)
+  //   console.log(param1 - param2)
 }
 substract(1, 2)
 
 // Stretch
 
-/*
 const exampleArray = [1, 2, 3, 4]
+/*
 const triple = exampleArray.map(function(num) {
   return num * 3
 })
-console.log(triple)
 */
+const triple = exampleArray.map(num => num * 3)
+console.log(triple)
