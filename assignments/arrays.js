@@ -112,11 +112,15 @@ console.log(carYears)
 The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging its length.
 */
 const oldCars = carYears.filter(year => year < 2000)
-console.log(`The lot has ${oldCars.length} cars that are older than the year 2000.`)
+console.log(
+  `The lot has ${oldCars.length} cars that are older than the year 2000.`
+)
 
 /* 
 ==== Challenge 6 ====
-A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
+A buyer is interested in seeing only BMW and Audi cars within the inventory. Return an array that only contains BMW and Audi cars. Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
 */
-const BMWAndAudi = []
-console.log()
+const BMWAndAudi = inventory.filter(
+  car => car.car_make === 'BMW' || car.car_make === 'Audi'
+)
+console.log(JSON.stringify(BMWAndAudi))
