@@ -43,6 +43,12 @@ let subtract = function(param1, param2) {
 subtract(1, 2)
 */
 
+let substract = (param1, param2) => {
+  return param1 - param2
+//   console.log(param1 - param2)
+}
+substract(1, 2)
+
 // Stretch
 
 /*
