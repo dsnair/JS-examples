@@ -98,7 +98,7 @@ console.log(
 ==== Challenge 3 ====
 The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console.
 */
-const carModels = []
+let carModels = []
 for (let i = 0; i < inventory.length; i++) {
   carModels.push(inventory[i].car_model)
 }
@@ -110,7 +110,7 @@ console.log(inventory.map(car => car.car_model).sort())
 /* ==== Challenge 4 ====
 The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
 */
-const carYears = []
+let carYears = []
 for (let i = 0; i < inventory.length; i++) {
   carYears.push(inventory[i].car_year)
 }
@@ -123,12 +123,21 @@ console.log(inventory.map(car => car.car_year))
 ==== Challenge 5 ====
 The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging its length.
 */
-
+let oldCars = []
+for (let i = 0; i < inventory.length; i++) {
+  let year = inventory[i].car_year
+  if (year < 2000) {
+    oldCars.push(inventory[i])
+  }
+}
+console.log(
+  `The lot has ${oldCars.length} cars that are older than the year 2000.`
+)
 
 // STRETCH
 console.log(
   `The lot has ${
-    carYears.filter(year => year < 2000).length
+    inventory.filter(car => car.car_year < 2000).length
   } cars that are older than the year 2000.`
 )
 
