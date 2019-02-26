@@ -39,15 +39,18 @@ const last = (arr, cb) => {
 console.log(last(items, lastCB))
 
 // 3. sumNums adds two numbers (x, y) and passes the result to the callback.
-const sumNumsCB = sumNumsResult => sumNumsResult
-const sumNums = (x, y, cb) => {
+const sumCB = sumResult => sumResult
+const sum = (x, y, cb) => {
   return cb(x + y)
 }
-console.log(sumNums(2, 3, sumNumsCB))
+console.log(sum(3, 3, sumCB))
 
 // 4. multiplyNums multiplies two numbers and passes the result to the callback.
-const multiplyNums = (x, y, cb) => {}
-// console.log(multiplyNums(2, 3, multiplyNumsCB))
+const multiplyNumsCB = multiplyResult => multiplyResult
+const multiplyNums = (x, y, cb) => {
+  return cb(x * y)
+}
+console.log(multiplyNums(3, 3, multiplyNumsCB))
 
 /* 
 5. contains checks if an item is present inside of the given array/list. 
