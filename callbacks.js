@@ -25,34 +25,35 @@ firstItem(items, function(first) {
 */
 
 // 1. getLength passes the length of the array into the callback.
-const getLengthCB = arr => arr.length
+const getLengthCB = arrLength => arrLength
 const getLength = (arr, cb) => {
-  return cb(arr)
+  return cb(arr.length)
 }
 console.log(getLength(items, getLengthCB))
 
 // 2. last passes the last item of the array into the callback.
-const lastCB = arr => arr.slice(-1)[0]
+const lastCB = lastItem => lastItem
 const last = (arr, cb) => {
-  return cb(arr)
+  return cb(arr.slice(-1)[0])
 }
 console.log(last(items, lastCB))
 
 // 3. sumNums adds two numbers (x, y) and passes the result to the callback.
+const sumNumsCB = sumNumsResult => sumNumsResult
 const sumNums = (x, y, cb) => {
+  return cb(x + y)
 }
+console.log(sumNums(2, 3, sumNumsCB))
 
 // 4. multiplyNums multiplies two numbers and passes the result to the callback.
-const multiplyNums = (x, y, cb) => {
-}
+const multiplyNums = (x, y, cb) => {}
 // console.log(multiplyNums(2, 3, multiplyNumsCB))
 
 /* 
 5. contains checks if an item is present inside of the given array/list. 
 Pass true to the callback if it is, otherwise pass false.
 */
-const contains = (item, arr, cb) => {
-}
+const contains = (item, arr, cb) => {}
 // console.log(contains('Sharpener', items, containsCB))
 
 /* 
@@ -60,5 +61,4 @@ STRETCH PROBLEM:
 removeDuplicates removes all duplicate values from the given array. Pass the duplicate free array to the callback function. Do not mutate the original array.
 */
 
-const removeDuplicates = (arr, cb) => {
-}
+const removeDuplicates = (arr, cb) => {}
