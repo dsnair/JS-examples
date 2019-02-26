@@ -1,6 +1,7 @@
-# JavaScript - I
 
-* The point of these assignments is to take your knowledge of JavaScript and start putting into practice the principles learned throughout JavaScript I.
+# JavaScript - II
+
+With some basic JavaScript principles in hand, we can now expand our skills out even further by exploring callback functions, array methods, and closure.  Finish each task in order as the concepts build on one another.
 
 ## Set Up The Project With Git
 
@@ -15,38 +16,38 @@
 
 **Follow these steps for completing your project.**
 
-* Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
-* Add your project manager as a reviewer on the pull-request
-* Your project manager will count the project as complete by merging the branch back into master.
+* [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
+* [ ] Add your project manager as a reviewer on the pull-request
+* [ ] Your project manager will count the project as complete by merging the branch back into master.
 
-## Assignment Description
+## Task 2: Higher Order Functions and Callbacks
 
-* Complete all the exercises as described inside each assignment file.
-* Use `console.log()` statements to check to see if your code does what it is supposed to do.
-* To test your `console.log()` statements open up the index.html file found in the assignments folder and use the developer tools to view the console.
-    **Note:** You could also run `node /assignments/<fileName>` and see what prints in your terminal.
-* Once you finish the exercises in each file, commit your code, and push it to your fork.
+This task focuses on getting practice with higher order functions and callback functions by giving you an array of values and instructions on what to do with that array.
 
-### Objects
+* [ ] Review the contents of the [callbacks.js](assignments/callbacks.js) file.  Notice you are given an array at the top of the page.  Use that array to aid you with your functions.
 
-To better understand objects, you really just need to write more of them. The [objects.js](assignments/objects.js) file contains several challenges centered around a theme of interns starting at a new job. The Human Resources team needs information about the new hires. Use your new found object skills answer vital questions for HR.
+* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
-* Read the instructions found within the file carefully to finish the challenges. 
-* [x] Complete each challenge presented before moving on to Arrays.
+## Task 3: Array Methods
 
-### Arrays
+Use `.forEach()`, `.map()`, `.filter()`, and `.reduce()` to loop over an array with 50 objects in it. The [array-methods.js](assignments/array-methods.js) file contains several challenges built around a fundraising 5K fun run event.
 
-The [arrays.js](assignments/arrays.js) assignment takes us through a large data set of used cars.  You have been asked to help a used car business with some customer requests based on their inventory.  Use for loops and arrays to solve their problems.
+* [ ] Review the contents of the [array-methods.js](assignments/array-methods.js) file.  
 
-* Utilize the the array `inventory` to complete your challenges.
-* [x] You are not permitted to use `map`, `reduce`, or `filter` to solve these problems. Only use a basic for-loop.
-* Complete each challenge presented before moving on to stretch.
+* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
-### Arrow Function Syntax
+* [ ] Notice the last three problems are up to you to create and solve.  This is an awesome opportunity for you to push your critical thinking about array methods, have fun with it.
 
-* [x] Arrow Function Syntax - [Check out this awesome guide for ES6 arrow syntax](https://medium.freecodecamp.org/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26). You will see more and more arrow functions as you progress deeper into JavaScript. Use the [function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax.  
+## Task 4: Closures
 
-### Stretch
+We have learned that closures allow us to access values in scope that have already been invoked (lexical scope).  
 
-* Move on to tomorrow's content and start studying callbacks, write a few of your own to get the hang of it.
-* [x] Look at array methods like `.map()`, `.reduce()`, `.filter()`. Use them on the data in the arrays assignment to accomplish the same things you did with the ES5 for-loop.
+**Hint: Utilize debugger statements in your code in combination with your developer tools to easily identify closure values.**
+
+* [ ] Review the contents of the [closure.js](assignments/closure.js) file.  
+* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
+
+## Stretch Goals
+
+* [ ] Go back through the stretch problems that you skipped over and complete as many as you can.
+* [ ] Look up what an IIFE is in JavaScript and experiment with them
