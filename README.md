@@ -20,7 +20,7 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 * Add your project manager as a reviewer on the pull-request
 * Your project manager will count the project as complete by merging the branch back into master.
 
-## Task 2: Higher Order Functions and Callbacks
+## Task 2: Higher-Order Functions and Callbacks
 
 This task focuses on getting practice with higher order functions and callback functions by giving you an array of values and instructions on what to do with that array.
 
@@ -42,7 +42,7 @@ We have learned that closures allow us to access values in scope that have alrea
 **Hint: Utilize debugger statements in your code in combination with your developer tools to easily identify closure values.**
 
 * Review the contents of the [closure.js](assignments/closure.js) file.  
-* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
+* [x] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
 ## Stretch Goals
 
