@@ -24,40 +24,41 @@ firstItem(items, function(first) {
 });
 */
 
+const paramCB = param => param
+
 // 1. getLength passes the length of the array into the callback.
-const getLengthCB = arrLength => arrLength
 const getLength = (arr, cb) => {
   return cb(arr.length)
 }
-console.log(getLength(items, getLengthCB))
+console.log(getLength(items, paramCB))
 
 // 2. last passes the last item of the array into the callback.
-const lastCB = lastItem => lastItem
 const last = (arr, cb) => {
   return cb(arr.slice(-1)[0])
 }
-console.log(last(items, lastCB))
+console.log(last(items, paramCB))
 
-// 3. sumNums adds two numbers (x, y) and passes the result to the callback.
-const sumCB = sumResult => sumResult
+// 3. sum adds two numbers (x, y) and passes the result to the callback.
 const sum = (x, y, cb) => {
   return cb(x + y)
 }
-console.log(sum(3, 3, sumCB))
+console.log(sum(3, 3, paramCB))
 
-// 4. multiplyNums multiplies two numbers and passes the result to the callback.
-const multiplyNumsCB = multiplyResult => multiplyResult
-const multiplyNums = (x, y, cb) => {
+// 4. multiply multiplies two numbers and passes the result to the callback.
+const multiply = (x, y, cb) => {
   return cb(x * y)
 }
-console.log(multiplyNums(3, 3, multiplyNumsCB))
+console.log(multiply(3, 3, paramCB))
 
 /* 
-5. contains checks if an item is present inside of the given array/list. 
+5. contains checks if an item is present inside of the given array. 
 Pass true to the callback if it is, otherwise pass false.
 */
-const contains = (item, arr, cb) => {}
-// console.log(contains('Sharpener', items, containsCB))
+const contains = (item, arr, cb) => {
+  return cb(arr.includes(item))
+}
+console.log(contains('Sharpener', items, paramCB))
+console.log(contains('Pencil', items, paramCB))
 
 /* 
 STRETCH PROBLEM: 
