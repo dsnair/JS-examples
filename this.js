@@ -1,4 +1,6 @@
 /* 
+YouTube lecture link: https://www.youtube.com/watch?v=ok6sl88dxHE
+
 In your own words, explain the four principle for the "this" keyword below:
 
 1. Window binding: The function acquires values from the global object in the window.
@@ -14,14 +16,13 @@ write out a code example of each explanation above
 */
 
 // Principle 1: Window Binding ====
-const x = 100
-const window = function() {
+const window = function(x) {
   // "use strict"
   return x
 }
 
 console.log('#1: Window')
-console.log(window())
+console.log(window(100))
 
 // Principle 2: Implicit Binding ====
 const rainbow = {
@@ -40,15 +41,15 @@ console.log(rainbow.fn())
 const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet']
 
 function explicit(colors) {
-  return `A rainbow has ${this.num} colors. The colors are: ${colors}.`
+  return `A rainbow has ${this.total} colors. The colors are: ${colors}.`
 }
 
 console.log('\n#3: Explicit')
 console.log('\ncall():', explicit.call(rainbow, colors))
 console.log('\napply():', explicit.apply(rainbow, colors))
 
-// const fn = rainbow.fn.bind(explicit(colors))
-// console.log('\nbind():', fn())
+const fn = explicit.bind(rainbow, colors)
+console.log('\nbind():', fn())
 
 // Principle 4: New Binding ====
 function Animal(animal, food) {
