@@ -3,7 +3,7 @@
 Write a simple closure of your own creation.  Keep it simple!
 */
 const outer = () => {
-  const x = 3
+  const x = 0
   const inner = () => {
     return x
   }
@@ -17,12 +17,15 @@ STRETCH PROBLEM:
 Return a function that when invoked increments and returns a counter variable.
 Example usage: 
 
-const newCounter = counter();
-newCounter(); // 1
-newCounter(); // 2
+counter(); // 1
+counter(); // 2
 */
-
-const counter = () => {}
+let counter = 0;
+increment = () => {
+  return counter += 1
+}
+console.log(increment())
+console.log(increment())
 
 /*
 STRETCH PROBLEM:
@@ -32,4 +35,12 @@ Return an object that has two methods called `increment` and `decrement`:
 `decrement` should decrement the counter variable and return it.
 */
 
-const counterFactory = () => {}
+// const counterFactory = () => {
+//   let x = 0
+//   return {
+//     increment: () => (x += 1),
+//     decrement: () => (x -= 1)
+//   }
+// }
+// console.log(counterFactory.increment())
+// console.log(counterFactory.decrement())
