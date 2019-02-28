@@ -1,8 +1,8 @@
 /*
- * Instructors - extensions of Person
- * Students - extensions of Person
- * Project Managers - extensions of Instructors
- */
+* Instructors - extensions of Person
+* Students - extensions of Person
+* Project Managers - extensions of Instructors
+*/
 
 /*
 1. Person
@@ -61,8 +61,9 @@ const josh = new Instructors({
 })
 
 console.log(josh.age)
+console.log(josh.specialty)
 console.log(josh.speak())
-console.log(josh.demo('HTML'))
+console.log(josh.demo('Java'))
 console.log(josh.grade({ name: 'Divya' }, 'React.js'))
 
 /*
@@ -109,10 +110,11 @@ const divya = new Students({
 
 console.log('\n')
 console.log(divya.location)
+console.log(divya.previousBackground)
 console.log(divya.speak())
 console.log(divya.listSubjects())
-console.log(divya.PRAssignment('Python'))
-console.log(divya.sprintChallenge('Redux.js'))
+console.log(divya.PRAssignment('Haskell'))
+console.log(divya.sprintChallenge('Express.js'))
 
 /*
 4. Program Managers
@@ -121,6 +123,43 @@ console.log(divya.sprintChallenge('Redux.js'))
   * `gradClassName`, i.e. CS1.
   * `favInstructor`, i.e. Sean.
 * ProjectManagers have the following Methods:
-  * `standUp`: a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
-  * `debugsCode`: a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`.
+  * `standUp`: a method that takes in a slack channel and returns `${name} announces to ${channel}, @channel stand-up time​​​​​!`
+  * `debugCode`: a method that takes in a student object and a subject string and returns `{name} debugs {<student-name>}'s code on ${subject}`.
 */
+
+class ProjectManagers extends Instructors {
+  constructor(pm) {
+    super(pm)
+    this.gradClassName = pm.gradClassName
+    this.favInstructor = pm.favInstructor
+  }
+  standUp(channel) {
+    return `${this.name} announces to ${channel}, @${channel} stand-up time!`
+  }
+  debugCode(student, subject) {
+    const { name } = student
+    return `${this.name} bebugs ${name}'s code on ${subject}.`
+  }
+}
+
+const liz = new ProjectManagers({
+  name: 'Liz',
+  age: 27,
+  location: 'Portland',
+  gender: 'Female',
+  specialty: 'Full-stack',
+  favLanguage: 'Javascript',
+  catchPhrase: `I love colors!`,
+  gradClassName: 'Web12',
+  favInstructor: 'Josh'
+})
+
+console.log('\n')
+console.log(liz.gender)
+console.log(liz.catchPhrase)
+console.log(liz.gradClassName)
+console.log(liz.speak())
+console.log(liz.demo('C++'))
+console.log(liz.grade({ name: 'Sam' }, 'Erlang'))
+console.log(liz.standUp(`web18_liz`))
+console.log(liz.debugCode({ name: 'Sean' }, 'ClosureScript'))

@@ -106,8 +106,8 @@ const fred = new Instructor({
   * `gradClassName`, i.e. CS1.
   * `favInstructor`, i.e. Sean.
 * ProjectManagers have the following Methods:
-  * `standUp`: a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
-  * `debugsCode`: a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`.
+  * `standUp`: a method that takes in a slack channel and returns `${name} announces to ${channel}, @channel stand-up time​​​​​!`
+  * `debugCode`: a method that takes in a student object and a subject string and returns `{name} debugs {<student-name>}'s code on ${subject}`.
 
 #### Stretch Problem
 
