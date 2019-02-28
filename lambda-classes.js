@@ -31,7 +31,7 @@ class Person {
   * `catchPhrase`, i.e. `Don't forget the homies`
 * Instructor has the following methods:
   * `demo` receives a `subject` string as an argument and returns 'Today, we're learning ${subject}', where subject is the param passed in.
-  * `grade` receives a `student` object and a `subject` string as arguments and returns '${<student name>} receives a perfect score on ${subject}'.
+  * `grade` receives a `student` object and a `subject` string as arguments and returns '${<student-name>} receives a perfect score on ${subject}'.
 */
 
 class Instructors extends Person {
@@ -73,25 +73,46 @@ console.log(josh.grade({ name: 'Divya' }, 'React.js'))
   * `className`, i.e. CS132.
   * `favSubjects`, i.e. an array of the student's favorite subjects ['Html', 'CSS', 'JavaScript'].
 * Student has the following methods:
-  * `listSubjects`: a method that returns all of the student's favoriteSubjects one-by-one.
-  * `PRAssignment`: a method that receives a subject as an argument and returns `${student.name} has submitted a PR for ${subject}`.
-  * `sprintChallenge` similar to PRAssignment but returns `${student.name} has begun sprint challenge on ${subject}`.
+  * `listSubjects`: a method that logs out all of the student's favoriteSubjects one-by-one.
+  * `PRAssignment`: a method that receives a subject as an argument and returns `${name} has submitted a PR for ${subject}`.
+  * `sprintChallenge` similar to PRAssignment but returns `${name} has begun sprint challenge on ${subject}`.
 */
 
-// class Students extends Person {
-//   constructor(student) {
-//     super(student)
-//     this.previousBackground = student.previousBackground
-//     this.className = student.className
-//     this.favSubjects = student.favSubjects
-//   }
-//   listSubjects() {
-//     this.favSubjects.forEach(subject => subject)
-//   }
-//   PRAssignment(subject) {
-//       return `${student.name} has submitted a PR for ${this.subject}.`
-//   }
-// }
+class Students extends Person {
+  constructor(student) {
+    super(student)
+    this.previousBackground = student.previousBackground
+    this.className = student.className
+    this.favSubjects = student.favSubjects
+  }
+  listSubjects() {
+    console.log(`${this.name}'s favorite subjects are:`)
+    this.favSubjects.forEach(subject => console.log(`${subject}`))
+  }
+  PRAssignment(subject) {
+    return `${this.name} has submitted a PR for ${subject}.`
+  }
+  sprintChallenge(subject) {
+    return `${this.name} has begun sprint challenge on ${subject}.`
+  }
+}
+
+const divya = new Students({
+  name: 'Divya',
+  age: 24,
+  location: 'Oakland',
+  gender: 'Female',
+  previousBackground: 'Data Science',
+  className: 'Web18',
+  favSubjects: ['React.js', 'Redux.js', 'Python']
+})
+
+console.log('\n')
+console.log(divya.location)
+console.log(divya.speak())
+console.log(divya.listSubjects())
+console.log(divya.PRAssignment('Python'))
+console.log(divya.sprintChallenge('Redux.js'))
 
 /*
 4. Program Managers
