@@ -71,8 +71,7 @@ const fred = new Instructor({
 
 * First we need a Person class. This will be our `base-class`.
 * Person receives `name` ,`age`, `location`, `gender` as props.
-* Person receives `speak` as a method.
-* This method returns `Hello, my name is Fred. I'm from Bedrock.`, where `name` and `location` are the object's own props.
+* Person receives `speak` as a method, which returns `Hello, my name is ${name}. I'm from ${location}.`, where `name` and `location` are the object's own props.
 
 #### Instructor
 
@@ -83,8 +82,8 @@ const fred = new Instructor({
   * `favLanguage`, i.e. 'JavaScript, Python, Elm, etc.'
   * `catchPhrase`, i.e. `Don't forget the homies`
 * Instructor has the following methods:
-  * `demo` receives a `subject` string as an argument and returns 'Today we're learning about ${subject}', where subject is the param passed in.
-  * `grade` receives a `student` object and a `subject` string as arguments and returns '${student.name} receives a perfect score on ${subject}'.
+  * `demo` receives a `subject` string as an argument and returns 'Today, we're learning ${subject}', where subject is the param passed in.
+  * `grade` receives a `student` object and a `subject` string as arguments and returns '${<student name>} receives a perfect score on ${subject}'.
 
 #### Student
 

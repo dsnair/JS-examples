@@ -7,7 +7,7 @@
 /*
 1. Person
 * Person receives `name` ,`age`, `location`, `gender` as props.
-* Person receives `speak` as a method, which returns `Hello, my name is Fred. I'm from Bedrock.`, where `name` and `location` are the object's own props.
+* Person receives `speak` as a method, which returns `Hello, my name is ${name}. I'm from ${location}.`, where `name` and `location` are the object's own props.
 */
 
 class Person {
@@ -22,16 +22,6 @@ class Person {
   }
 }
 
-const fred = new Person({
-    name: 'Fred',
-    age: 37,
-    location: 'Bedrock',
-    gender: 'Male'
-})
-
-console.log(fred.age)
-console.log(fred.speak())
-
 /*
 2. Instructors
 * Instructor uses the same attributes that have been set up by Person.
@@ -40,24 +30,40 @@ console.log(fred.speak())
   * `favLanguage`, i.e. 'JavaScript, Python, Elm, etc.'
   * `catchPhrase`, i.e. `Don't forget the homies`
 * Instructor has the following methods:
-  * `demo` receives a `subject` string as an argument and returns 'Today we're learning about ${subject}', where subject is the param passed in.
-  * `grade` receives a `student` object and a `subject` string as arguments and returns '${student.name} receives a perfect score on ${subject}'.
+  * `demo` receives a `subject` string as an argument and returns 'Today, we're learning ${subject}', where subject is the param passed in.
+  * `grade` receives a `student` object and a `subject` string as arguments and returns '${<student name>} receives a perfect score on ${subject}'.
 */
 
-// class Instructors extends Person {
-//   constructor(instructor) {
-//     super(instructor)
-//     this.specialty = instructor.specialty
-//     this.favLanguage = instructor.favLanguage
-//     this.catchPhrase = instructor.catchPhrase
-//   }
-//   demo(subject) {
-//     return `Today we're learning about ${subject}.`
-//   }
-//   grade(student, subject) {
-//     return `${student.name} receives a perfect score on ${subject}.`
-//   }
-// }
+class Instructors extends Person {
+  constructor(instructor) {
+    super(instructor)
+    this.specialty = instructor.specialty
+    this.favLanguage = instructor.favLanguage
+    this.catchPhrase = instructor.catchPhrase
+  }
+  demo(subject) {
+    return `Today, we're learning ${subject}.`
+  }
+  grade(student, subject) {
+    const { name } = student
+    return `${name} receives a perfect score on ${subject}.`
+  }
+}
+
+const josh = new Instructors({
+  name: 'Josh',
+  age: 37,
+  location: 'Utah',
+  gender: 'Male',
+  specialty: 'Front-end',
+  favLanguage: 'Javascript',
+  catchPhrase: `Keep coding`
+})
+
+console.log(josh.age)
+console.log(josh.speak())
+console.log(josh.demo('HTML'))
+console.log(josh.grade({ name: 'Divya' }, 'React.js'))
 
 /*
 3. Students
