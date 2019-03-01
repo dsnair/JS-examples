@@ -1,52 +1,112 @@
-# JavaScript - I
+# Sprint Challenge: JavaScript Fundamentals
 
-* The point of these assignments is to take your knowledge of JavaScript and start putting into practice the principles learned throughout JavaScript I.
+This challenge allows you to practice the concepts and techniques learned over the past week and apply them in a survey of problems. This Sprint explored JavaScript Fundamentals. During this Sprint, you studied variables, functions, object literals, arrays, this keyword, prototypes, and class syntax. In your challenge this week, you will demonstrate proficiency by completing a survey of JavaScript problems.
 
-## Set Up The Project With Git
+## Instructions
 
-**Follow these steps to set up and work on your project:**
+**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-* Create a forked copy of this project.
-* Add your project manager as collaborator on Github.
-* Clone your OWN version of the repository (Not Lambda's by mistake!).
-* Create a new branch: git checkout -b `<firstName-lastName>`.
-* Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* Push commits: git push origin `<firstName-lastName>`.
+This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
-**Follow these steps for completing your project.**
+You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your PM and Instructor in your cohort help channel on Slack. Your work reflects your proficiency in JavaScript fundamentals.
 
-* Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
-* Add your project manager as a reviewer on the pull-request
-* Your project manager will count the project as complete by merging the branch back into master.
+You have three hours to complete this challenge. Plan your time accordingly.
 
-## Assignment Description
+## Commits
 
-* Complete all the exercises as described inside each assignment file.
-* Use `console.log()` statements to check to see if your code does what it is supposed to do.
-* To test your `console.log()` statements open up the index.html file found in the assignments folder and use the developer tools to view the console.
-    **Note:** You could also run `node /assignments/<fileName>` and see what prints in your terminal.
-* Once you finish the exercises in each file, commit your code, and push it to your fork.
+Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons) and your project manager.
 
-### Objects
+## Description
 
-To better understand objects, you really just need to write more of them. The [objects.js](assignments/objects.js) file contains several challenges centered around a theme of interns starting at a new job. The Human Resources team needs information about the new hires. Use your new found object skills answer vital questions for HR.
+You will notice there are several JavaScript files. Each of those files contain JavaScript problems you need to solve. If you get stuck on something, skip over it and come back to it later. Run `node <file-name>` to execute these files.
 
-* Read the instructions found within the file carefully to finish the challenges. 
-* [x] Complete each challenge presented before moving on to Arrays.
+In meeting the minimum viable product (MVP) specifications listed below, you should have a console full of correct responses to the problems given.
 
-### Arrays
+## Self-Study Questions
 
-The [arrays.js](assignments/arrays.js) assignment takes us through a large data set of used cars.  You have been asked to help a used car business with some customer requests based on their inventory.  Use for loops and arrays to solve their problems.
+Demonstrate your understanding of this week's concepts by answering the following free-form questions.
 
-* Utilize the the array `inventory` to complete your challenges.
-* [x] You are not permitted to use `map`, `reduce`, or `filter` to solve these problems. Only use a basic for-loop.
-* Complete each challenge presented before moving on to stretch.
+Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
-### Arrow Function Syntax
+1. Describe the biggest difference between `.forEach()` & `.map()`.
 
-* [x] Arrow Function Syntax - [Check out this awesome guide for ES6 arrow syntax](https://medium.freecodecamp.org/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26). You will see more and more arrow functions as you progress deeper into JavaScript. Use the [function-conversion.js](assignments/function-conversion.js) file as a helper challenge to showcase some of the differences between ES5 and ES6 syntax.  
+> Both `.forEach()` and `.map()` run a provided function once for each array element. The difference, however, is that `.forEach()` returns `undefined` or nothing, while `.map()` returns a new array, of the same size as the input array, with the results of the function.
 
-### Stretch
+2. What is the difference between a function and a method?
 
-* Move on to tomorrow's content and start studying callbacks, write a few of your own to get the hang of it.
-* [x] Look at array methods like `.map()`, `.reduce()`, `.filter()`. Use them on the data in the arrays assignment to accomplish the same things you did with the ES5 for-loop.
+> Functions and methods are both functions. When an object property is a function, it is called a method.
+
+3. What is closure?
+
+> A closure is a feature in JS where an inner function has access to:
+> - the variables defined within its outer (enclosing) function
+> - the variables defined within its own scope (curly brackets)
+> - global variables defined in the window object
+
+> The inner function preserves (closures) the value of the outer function's variable when that outer function is executed. 
+
+4. Describe the four rules of the `this` keyword.
+
+> 1. Window binding: The function acquires values from the global object in the window.
+> 2. Implicit binding: The function lives in an object and automatically acquires values from the keys of that object.
+> 3. Explicit binding: The function acquires values from the keys of an object that is explicitly referred to in .apply(), .bind(), or .call().
+> 4. New binding: The function creates an empty object. The object's properties and methods are added by 'this'. This new object is returned at the end.
+
+5. Why do we need `super()` in an extended class?
+
+> `super()` inherits the reference to `this` from the parent class and all the methods of the parent class, and passes them all down to the subclass.
+
+## Project Set up
+
+Follow these steps to set up and work on your project:
+
+- Create a forked copy of this project.
+- Add PM as collaborator on Github.
+- Clone your OWN version of Repo (Not Lambda's by mistake!).
+- Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- Create a pull request before you start working on the project requirements. You will continuously push your updates throughout the project.
+- You are now ready to build this project with your preferred IDE
+- Implement the project on your Branch, committing changes regularly.
+- Push commits: git push origin `<firstName-lastName>`.
+
+Follow these steps for completing your project:
+
+- Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
+- Add your Project Manager as a Reviewer on the Pull-request
+- PM then will count the HW as done by merging the branch back into master.
+
+## Minimum Viable Product
+
+Your finished project must include all of the following requirements:
+
+**Pro-tip for this challenge: If something seems like it isn't working locally, copy and paste your code up to codepen and take another look at the console.**
+
+## Task 1: Objects and Arrays
+
+Test your knowledge of objects and arrays.
+
+- [x] Use the [objects-arrays.js](challenges/objects-arrays.js) link to get started. Read the instructions carefully!
+
+## Task 2: Functions
+
+This challenge takes a look at callbacks and closures as well as scope.
+
+- [x] Use the [functions.js](challenges/functions.js) link to get started. Read the instructions carefully!
+
+## Task 3: Prototypes
+
+Create constructors, bind methods, and create cuboids in this prototypes challenge.
+
+- [x] Use the [prototypes.js](challenges/prototypes.js) link to get started. Read the instructions carefully!
+
+## Task 4: Classes
+
+Once you have completed the prototypes challenge, it's time to convert all your hard work into classes.
+
+- [x] Use the [classes.js](challenges/classes.js) link to get started. Read the instructions carefully!
+
+In your solutions, it is essential that you follow best practices and produce clean and professional results. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
+
+## Stretch Problems
+
+- [x] There are a few stretch problems found throughout the files, don't work on them until you are finished with MVP requirements!
