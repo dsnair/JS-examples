@@ -1,8 +1,8 @@
 /*
-* Instructors - extensions of Person
-* Students - extensions of Person
-* Project Managers - extensions of Instructors
-*/
+ * Instructors - extensions of Person
+ * Students - extensions of Person
+ * Project Managers - extensions of Instructors
+ */
 
 /*
 1. Person
@@ -48,6 +48,20 @@ class Instructors extends Person {
     const { name } = student
     return `${name} receives a perfect score on ${subject}.`
   }
+  // STRETCH
+  addSub(student) {
+    // add or subtract 10 points
+    // min = Math.ceil(min)
+    // max = Math.floor(max)
+    // both min and max are inclusive
+    // student.grade = Math.floor(Math.random() * (max - min + 1)) + min
+    if (Math.random() > 0.5) {
+      student.grade += Math.floor(Math.random() * 10)
+    } else {
+      student.grade -= Math.floor(Math.random() * 10)
+    }
+    return student.grade
+  }
 }
 
 const josh = new Instructors({
@@ -57,14 +71,16 @@ const josh = new Instructors({
   gender: 'Male',
   specialty: 'Front-end',
   favLanguage: 'Javascript',
-  catchPhrase: `Keep coding`
+  catchPhrase: `Coding is dope!`
 })
 
-console.log(josh.age)
-console.log(josh.specialty)
+console.log(josh.name)
+console.log(josh.catchPhrase)
 console.log(josh.speak())
 console.log(josh.demo('Java'))
 console.log(josh.grade({ name: 'Divya' }, 'React.js'))
+
+// STRETCH
 
 /*
 3. Students
@@ -85,6 +101,7 @@ class Students extends Person {
     this.previousBackground = student.previousBackground
     this.className = student.className
     this.favSubjects = student.favSubjects
+    this.grade = student.grade
   }
   listSubjects() {
     console.log(`${this.name}'s favorite subjects are:`)
@@ -96,6 +113,16 @@ class Students extends Person {
   sprintChallenge(subject) {
     return `${this.name} has begun sprint challenge on ${subject}.`
   }
+  graduate(instructor) {
+    let attempts = 0
+    while (this.grade < 70 && attempts < 10) {
+      console.log(`${this.name}, your new grade is ${instructor.addSub(this)}`)
+      attempts++
+    }
+    return this.grade >= 70
+      ? `Congrats, ${this.name}! You graduated :)`
+      : `${this.name}, keep studying!`
+  }
 }
 
 const divya = new Students({
@@ -105,16 +132,22 @@ const divya = new Students({
   gender: 'Female',
   previousBackground: 'Data Science',
   className: 'Web18',
-  favSubjects: ['React.js', 'Redux.js', 'Python']
+  favSubjects: ['React.js', 'Redux.js', 'Python'],
+  grade: 70
 })
 
 console.log('\n')
-console.log(divya.location)
+console.log(divya.name)
 console.log(divya.previousBackground)
 console.log(divya.speak())
 console.log(divya.listSubjects())
 console.log(divya.PRAssignment('Haskell'))
 console.log(divya.sprintChallenge('Express.js'))
+
+// STRETCH
+console.log(divya.grade)
+console.log(josh.addSub(divya))
+console.log(divya.graduate(josh))
 
 /*
 4. Program Managers
@@ -155,7 +188,7 @@ const liz = new ProjectManagers({
 })
 
 console.log('\n')
-console.log(liz.gender)
+console.log(liz.name)
 console.log(liz.catchPhrase)
 console.log(liz.gradClassName)
 console.log(liz.speak())
@@ -163,3 +196,6 @@ console.log(liz.demo('C++'))
 console.log(liz.grade({ name: 'Sam' }, 'Erlang'))
 console.log(liz.standUp(`web18_liz`))
 console.log(liz.debugCode({ name: 'Sean' }, 'ClosureScript'))
+
+// STRETCH
+// console.log(liz.addSub())
