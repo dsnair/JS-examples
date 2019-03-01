@@ -45,8 +45,8 @@ class Instructors extends Person {
     return `Today, we're learning ${subject}.`
   }
   grade(student, subject) {
-    const { name } = student
-    return `${name} receives a perfect score on ${subject}.`
+    // const { name } = student
+    return `${student.name} receives a perfect score on ${subject}.`
   }
   // STRETCH
   addSub(min = -10, max = 10, student) {
@@ -68,12 +68,6 @@ const josh = new Instructors({
   favLanguage: 'Javascript',
   catchPhrase: `Coding is dope!`
 })
-
-console.log(josh.name)
-console.log(josh.catchPhrase)
-console.log(josh.speak())
-console.log(josh.demo('Java'))
-console.log(josh.grade({ name: 'Divya' }, 'React.js'))
 
 /*
 3. Students
@@ -131,19 +125,6 @@ const divya = new Students({
   grade: 70
 })
 
-console.log('\n')
-console.log(divya.name)
-console.log(divya.previousBackground)
-console.log(divya.speak())
-console.log(divya.listSubjects())
-console.log(divya.PRAssignment('Haskell'))
-console.log(divya.sprintChallenge('Express.js'))
-
-// STRETCH
-console.log(`${divya.name}'s current grade: ${divya.grade}`)
-console.log(`${divya.name}'s new grade: ${josh.addSub(-10, 10, divya)}`)
-console.log(divya.graduate(josh))
-
 /*
 4. Program Managers
 * ProjectManagers are extensions of Instructors.
@@ -165,8 +146,7 @@ class ProjectManagers extends Instructors {
     return `${this.name} announces to ${channel}, @${channel} stand-up time!`
   }
   debugCode(student, subject) {
-    const { name } = student
-    return `${this.name} bebugs ${name}'s code on ${subject}.`
+    return `${this.name} bebugs ${student.name}'s code on ${subject}.`
   }
 }
 
@@ -177,17 +157,39 @@ const liz = new ProjectManagers({
   gender: 'Female',
   specialty: 'Full-stack',
   favLanguage: 'Javascript',
-  catchPhrase: `I love colors!`,
+  catchPhrase: `Cool stuff potato!`,
   gradClassName: 'Web12',
   favInstructor: 'Josh'
 })
 
+// Instructors
+console.log(josh.name)
+console.log(josh.catchPhrase)
+console.log(josh.speak())
+console.log(josh.demo('Java'))
+console.log(josh.grade(divya, 'React.js'))
+
+// Students
+console.log('\n')
+console.log(divya.name)
+console.log(divya.previousBackground)
+console.log(divya.speak())
+console.log(divya.listSubjects())
+console.log(divya.PRAssignment('Haskell'))
+console.log(divya.sprintChallenge('Express.js'))
+
+// STRETCH
+console.log(`${divya.name}'s current grade: ${divya.grade}`)
+console.log(`${divya.name}'s new grade: ${josh.addSub(-10, 10, divya)}`)
+console.log(divya.graduate(josh))
+
+// PM's
 console.log('\n')
 console.log(liz.name)
 console.log(liz.catchPhrase)
 console.log(liz.gradClassName)
 console.log(liz.speak())
 console.log(liz.demo('C++'))
-console.log(liz.grade({ name: 'Sam' }, 'Erlang'))
+console.log(liz.grade(divya, 'Erlang'))
 console.log(liz.standUp(`web18_liz`))
-console.log(liz.debugCode({ name: 'Sean' }, 'ClosureScript'))
+console.log(liz.debugCode(divya, 'ClosureScript'))
