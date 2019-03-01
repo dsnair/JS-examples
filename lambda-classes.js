@@ -49,17 +49,12 @@ class Instructors extends Person {
     return `${name} receives a perfect score on ${subject}.`
   }
   // STRETCH
-  addSub(student) {
+  addSub(min = -10, max = 10, student) {
     // add or subtract 10 points
-    // min = Math.ceil(min)
-    // max = Math.floor(max)
+    min = Math.ceil(min)
+    max = Math.floor(max)
     // both min and max are inclusive
-    // student.grade = Math.floor(Math.random() * (max - min + 1)) + min
-    if (Math.random() > 0.5) {
-      student.grade += Math.floor(Math.random() * 10)
-    } else {
-      student.grade -= Math.floor(Math.random() * 10)
-    }
+    student.grade += Math.floor(Math.random() * (max - min + 1)) + min
     return student.grade
   }
 }
@@ -79,8 +74,6 @@ console.log(josh.catchPhrase)
 console.log(josh.speak())
 console.log(josh.demo('Java'))
 console.log(josh.grade({ name: 'Divya' }, 'React.js'))
-
-// STRETCH
 
 /*
 3. Students
@@ -116,7 +109,9 @@ class Students extends Person {
   graduate(instructor) {
     let attempts = 0
     while (this.grade < 70 && attempts < 10) {
-      console.log(`${this.name}, your new grade is ${instructor.addSub(this)}`)
+      console.log(
+        `${this.name}'s new grade: ${instructor.addSub(-10, 10, this)}`
+      )
       attempts++
     }
     return this.grade >= 70
@@ -145,8 +140,8 @@ console.log(divya.PRAssignment('Haskell'))
 console.log(divya.sprintChallenge('Express.js'))
 
 // STRETCH
-console.log(divya.grade)
-console.log(josh.addSub(divya))
+console.log(`${divya.name}'s current grade: ${divya.grade}`)
+console.log(`${divya.name}'s new grade: ${josh.addSub(-10, 10, divya)}`)
 console.log(divya.graduate(josh))
 
 /*
@@ -196,6 +191,3 @@ console.log(liz.demo('C++'))
 console.log(liz.grade({ name: 'Sam' }, 'Erlang'))
 console.log(liz.standUp(`web18_liz`))
 console.log(liz.debugCode({ name: 'Sean' }, 'ClosureScript'))
-
-// STRETCH
-// console.log(liz.addSub())
