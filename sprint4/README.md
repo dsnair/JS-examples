@@ -39,12 +39,10 @@ Edit this document to include your answers after each question. Make sure to lea
 3. What is closure?
 
 > A closure is a feature in JS where an inner function has access to:
->
 > - the variables defined within its outer (enclosing) function
 > - the variables defined within its own scope (curly brackets)
 > - global variables defined in the window object
-
-> The inner function preserves (closures) the value of the outer function's variable when that outer function is executed.
+> The inner function preserves (closures) the value of the outer function's variable when that outer function is executed. 
 
 4. Describe the four rules of the `this` keyword.
 
